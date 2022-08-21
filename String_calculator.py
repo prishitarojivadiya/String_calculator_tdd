@@ -1,5 +1,6 @@
+from logging import raiseExceptions
 from posixpath import split
-import re
+from unittest.case import _AssertRaisesContext
 class String_calculator:
     def add(strings):
         if strings == '':
@@ -11,10 +12,19 @@ class String_calculator:
             sum=0
             for i in list_of_comaseperated_string:
                 if i.isdigit()==True:
-                    i = int(i)
-                    sum = sum+i
+                    negative_numbers = int(i) < 0
+                    if negative_numbers == True:
+                        raise Exception('negatives not allowed ' )
+                        return i
+                        break
+                    elif int(i) <= 1000:
+                        i = int(i)
+                        sum = sum+i
+                    elif int(i) > 1000:
+                        continue
                 elif i.isalpha()==True:
                     i = i.lower()
                     i = ord(i) - 96
                     sum = sum + i
+                
             return sum
