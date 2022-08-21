@@ -5,5 +5,8 @@ class Test_string_calculator(unittest.TestCase):
     def test_empty_string(self):
         result=String_calculator.add("")
         self.assertEqual(result,0)
+    def test_one_string(self):
+        result=String_calculator.add("1")
+        self.assertEqual(result,1)
     
         
