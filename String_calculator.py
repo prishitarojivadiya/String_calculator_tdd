@@ -10,6 +10,11 @@ class String_calculator:
             list_of_comaseperated_string = strings.split(",")
             sum=0
             for i in list_of_comaseperated_string:
-                i = int(i)
-                sum = sum+i
+                if i.isdigit()==True:
+                    i = int(i)
+                    sum = sum+i
+                elif i.isalpha()==True:
+                    i = i.lower()
+                    i = ord(i) - 96
+                    sum = sum + i
             return sum

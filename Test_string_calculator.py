@@ -12,5 +12,8 @@ class Test_string_calculator(unittest.TestCase):
     def test_multiple_coma_seperated_string(self):
         result=String_calculator.add("1,2,3")
         self.assertEqual(result,6)
+    def test_multiple_coma_seperated_alphanumeric_string(self):
+        result=String_calculator.add("1,2,a,c")
+        self.assertEqual(result,7)
     
         
