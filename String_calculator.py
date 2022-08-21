@@ -1,3 +1,6 @@
+import re
 class String_calculator:
     def add(strings):
-        return strings
+        if strings == '':
+            return 0
+        

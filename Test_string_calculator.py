@@ -3,6 +3,7 @@ from unittest import result
 from String_calculator import String_calculator
 class Test_string_calculator(unittest.TestCase):
     def test_empty_string(self):
-        result=String_calculator.add("1")
+        result=String_calculator.add("")
         self.assertEqual(result,0)
+    
         
