@@ -30,4 +30,7 @@ class Test_string_calculator(unittest.TestCase):
     def test_morethanthousand_should_be_ignored(self):
         result=String_calculator.add("1000,1001")
         self.assertEqual(result,1000) 
-        
+    
+    def test_newlines_as_delimeter(self):
+        result=String_calculator.add("1\n2,3,4")
+        self.assertEqual(result,10)

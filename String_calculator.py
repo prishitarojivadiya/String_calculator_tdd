@@ -2,6 +2,7 @@ from audioop import add
 from logging import raiseExceptions
 from posixpath import split
 import string
+import re
 from tokenize import String
 from unittest.case import _AssertRaisesContext
 class String_calculator:
@@ -11,7 +12,7 @@ class String_calculator:
         elif len(strings) == 1:
             return int(strings)
         else:
-            list_of_comaseperated_string = strings.split(",")
+            list_of_comaseperated_string = re.split(',|\n',strings)
             sum=0
             negativeNumbers=""
             for i in list_of_comaseperated_string:
